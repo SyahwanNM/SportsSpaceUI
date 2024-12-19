@@ -130,17 +130,45 @@
                </a>
             </li>
             <li>
-               <a href="/komunitas/komunitas.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-700 hover:text-white group">
-                  <i class="fi fi-rs-users-alt"></i>
-                  <span class="flex-1 ms-3 whitespace-nowrap">Community</span>
+               <a href="/komunitas/komunitas.html" class="flex items-center w-full p-2 text-base text-black hover:bg-red-600 hover:bg-red-600 hover:text-white duration-75 rounded-lg group" 
+                  aria-controls="dropdown-example" 
+                  data-collapse-toggle="dropdown-example">
+                  <i class="fi fi-rs-users-alt"></i>   
+                  <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Community</span>
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg>
                </a>
+               <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                     <li>
+                        <a href="#" class="flex items-center w-full p-2 text-black hover:bg-red-600 transition duration-75 rounded-lg pl-11">My Community</a>
+                     </li>
+                     <li>
+                        <a href="/komunitas/addKomunitas.html" class="flex items-center w-full p-2 text-black hover:bg-red-600 hover:text-white transition duration-75 rounded-lg pl-11">Add Community</a>
+                     </li>
+               </ul>
             </li>
-            <li>
-               <a href="/komunitas/addKomunitas.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-700 hover:text-white group">
-                  <i class="fi fi-rs-users-alt"></i>
-                  <span class="flex-1 ms-3 whitespace-nowrap">Add Community</span>
-               </a>
-            </li>
+            
+            <script>
+               document.addEventListener('DOMContentLoaded', () => {
+                  const menuButton = document.querySelector('[data-collapse-toggle="dropdown-example"]');
+                  const submenu = document.getElementById('dropdown-example');
+                  const dropdownIcon = menuButton.querySelector('svg');
+            
+                  // Klik pada menu utama (bukan ikon dropdown) akan membuka halaman
+                  menuButton.addEventListener('click', (event) => {
+                     if (event.target === dropdownIcon || dropdownIcon.contains(event.target)) {
+                        event.preventDefault(); // Hanya cegah navigasi jika ikon diklik
+                        submenu.classList.toggle('hidden');
+                     }
+                  });
+            
+                  // Cegah submenu menutup ketika salah satu opsinya diklik
+                  submenu.addEventListener('click', (event) => {
+                     event.stopPropagation(); // Hindari penutupan submenu
+                  });
+               });
+            </script>
             <li>
                <a href="/fields/fields.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-700 hover:text-white group">
                   <i class="fi fi-rs-court-sport">
