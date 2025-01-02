@@ -19,6 +19,11 @@
    body {
       font-family: 'Plus Jakarta Sans', sans-serif;
    }
+   #crypto-modal {
+    max-width: 300px;
+    margin-top: 10px;
+    transform: translateX(-100px);
+  }
 </style>
 <body class="bg-gray-100">
    <nav class="fixed top-0 z-50 w-full bg-white border-red-700">
@@ -49,10 +54,72 @@
             </button>
          </div>
          
-         <div class="flex items-center">
-            <button class="p-2 rounded-full bg-gray-200 hover:bg-red-500">
-               <i class="fi fi-rs-bell"></i>
+         <div class="relative">
+            <button id="bellButton" class="p-2 rounded-full bg-gray-200 hover:bg-red-500">
+              <i class="fi fi-rs-bell"></i>
             </button>
+            <div id="crypto-modal" tabindex="-1" aria-hidden="true" class="hidden absolute top-full left-0 z-50 bg-white rounded-lg shadow w-64">
+              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                <h3 class="text-lg font-semibold text-gray-900">
+                  Notification
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crypto-modal">
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                  </svg>
+                  <span class="sr-only">Close modal</span>
+                </button>
+              </div>
+              <div class="p-4 md:p-5">
+                <p class="text-sm font-normal text-gray-500 dark:text-gray-400">Latest notification.</p>
+                <ul>
+                  <li class="flex items-center mb-2 hover:bg-gray-100 p-2 rounded-lg">
+                     <img alt="Friend 1" class="rounded-full mr-2" height="30" src="https://storage.googleapis.com/a1aa/image/oDJoEMVqSvYhGBkeGM3OOYudbjHWHZwNX96KKC7DZwRfiF1TA.jpg" width="30"/>
+                     <div>
+                        <p class="text-sm">Permintaan berteman</p>
+                        <p class="text-gray-500 text-sm">Aizen</p>
+                     </div>
+                  </li>
+                  <li class="flex items-center mb-2 hover:bg-gray-100 p-2 rounded-lg">
+                     <img alt="Friend 1" class="rounded-full mr-2" height="30" src="https://storage.googleapis.com/a1aa/image/oDJoEMVqSvYhGBkeGM3OOYudbjHWHZwNX96KKC7DZwRfiF1TA.jpg" width="30"/>
+                     <div>
+                        <p class="text-sm">Permintaan berteman</p>
+                        <p class="text-gray-500 text-sm">Ikbal</p>
+                     </div>
+                  </li>
+                  <li class="flex items-center mb-2 hover:bg-gray-100 p-2 rounded-lg">
+                     <img alt="Friend 1" class="rounded-full mr-2" height="30" src="https://storage.googleapis.com/a1aa/image/oDJoEMVqSvYhGBkeGM3OOYudbjHWHZwNX96KKC7DZwRfiF1TA.jpg" width="30"/>
+                     <div>
+                        <p class="text-sm">Permintaan berteman</p>
+                        <p class="text-gray-500 text-sm">mr.pulltea</p>
+                     </div>
+                  </li>
+               </ul>
+                <div>
+                  <a href="#" class="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400">
+                    <svg class="w-3 h-3 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.529 7.988a2.502 2.502 0 0 1 5 .191A2.441 2.441 0 0 1 10 10.582V12m-.01 3.008H10M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                    </svg>
+                    More information</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <script>
+            const bellButton = document.getElementById('bellButton');
+            const cryptoModal = document.getElementById('crypto-modal');
+          
+            bellButton.addEventListener('click', () => {
+              cryptoModal.classList.toggle('hidden');
+            });
+          
+            const closeModalButton = cryptoModal.querySelector('[data-modal-toggle="crypto-modal"]');
+            closeModalButton.addEventListener('click', () => {
+              cryptoModal.classList.add('hidden');
+            });
+          </script>
+
             <div class="flex items-center ms-3">
                <div>
                   <button type="button" class="flex text-sm bg-white rounded-full focus:ring-4 focus:ring-red-500" aria-expanded="false" data-dropdown-toggle="dropdown-user">
@@ -97,16 +164,13 @@
                            <span class="sr-only">Close modal</span>
                         </button>
                            
-                           <!-- Konten Modal -->
                         <div class="p-4 md:p-5 text-center">
                            <h3 class="mb-5 text-lg font-normal text-gray-900 dark:text-gray-900">Are you sure you want to log out?</h3>
                               
-                           <!-- Tombol Yes -->
                            <a href="/landingpage/firstpage.html" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center">
                               Yes, log out
                            </a>
                               
-                           <!-- Tombol No -->
                            <button data-modal-hide="logout-modal" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-white focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                               No, cancel
                            </button>
@@ -466,36 +530,59 @@
                 </div>
                </div>
             </div>
-            <div class="lg:w-1/5 md:w-1/4 sm:w-full p-2">
+            <div class="lg:w-1/5 md:w-1/4 sm:w-full p-4">
                <div class="fixed md:relative sm:relative">
                   <!-- Friends List -->
                   <div class="bg-white p-4 rounded-lg shadow mb-4">
-                     <h3 class="text-lg font-bold mb-4">Friend</h3>
+                     <h3 class="text-md font-bold mb-4">Friend</h3>
                      <ul>
                         <li class="flex items-center mb-2 hover:bg-gray-100 p-2 rounded-lg">
                            <img alt="Friend 1" class="rounded-full mr-2" height="30" src="https://storage.googleapis.com/a1aa/image/oDJoEMVqSvYhGBkeGM3OOYudbjHWHZwNX96KKC7DZwRfiF1TA.jpg" width="30"/>
                            <div>
-                              <p class="font-medium">Wiyah</p>
+                              <p class="text-sm">Wiyah</p>
                               <p class="text-gray-500 text-sm">Online 3 Jam yang lalu</p>
                            </div>
                         </li>
-                        <!-- Tambahkan teman lainnya... -->
+                        <li class="flex items-center mb-2 hover:bg-gray-100 p-2 rounded-lg">
+                           <img alt="Friend 1" class="rounded-full mr-2" height="30" src="https://storage.googleapis.com/a1aa/image/oDJoEMVqSvYhGBkeGM3OOYudbjHWHZwNX96KKC7DZwRfiF1TA.jpg" width="30"/>
+                           <div>
+                              <p class="text-sm">Wiyah</p>
+                              <p class="text-gray-500 text-sm">Online 3 Jam yang lalu</p>
+                           </div>
+                        </li>
+                        <li class="flex items-center mb-2 hover:bg-gray-100 p-2 rounded-lg">
+                           <img alt="Friend 1" class="rounded-full mr-2" height="30" src="https://storage.googleapis.com/a1aa/image/oDJoEMVqSvYhGBkeGM3OOYudbjHWHZwNX96KKC7DZwRfiF1TA.jpg" width="30"/>
+                           <div>
+                              <p class="text-sm">Wiyah</p>
+                              <p class="text-gray-500 text-sm">Online 3 Jam yang lalu</p>
+                           </div>
+                        </li>
                      </ul>
                   </div>
                   <!-- Incoming Activity -->
                   <div class="bg-white p-4 rounded-lg shadow">
-                     <h3 class="text-lg text-red-700 font-bold mb-4">Incoming Activity</h3>
+                     <h3 class="text-md text-red-700 font-bold mb-4">Incoming Activity</h3>
                      <div class="flex items-center mb-2 hover:bg-gray-100 hover:scale-105 transform p-2 rounded-lg">
                         <div class="bg-red-700 text-white rounded-full w-10 h-10 flex items-center justify-center mr-2">
                            <p class="font-bold">20</p>
                         </div>
                         <div>
-                           <p class="font-medium">Badminton</p>
+                           <p class="text-sm">Badminton</p>
                            <p class="text-gray-500 text-sm">14.00 - 16.00</p>
                            <p class="text-gray-500 text-sm">Fun Game Bersama</p>
                         </div>
                      </div>
-                     <!-- Tambahkan aktivitas lainnya... -->
+                     <div class="flex items-center mb-2 hover:bg-gray-100 hover:scale-105 transform p-2 rounded-lg">
+                        <div class="bg-red-700 text-white rounded-full w-10 h-10 flex items-center justify-center mr-2">
+                           <p class="font-bold">20</p>
+                        </div>
+                        <div>
+                           <p class="text-sm">Badminton</p>
+                           <p class="text-gray-500 text-sm">14.00 - 16.00</p>
+                           <p class="text-gray-500 text-sm">Fun Game Bersama</p>
+                        </div>
+                     </div>
+                     
                   </div>
                </div>
             </div>
