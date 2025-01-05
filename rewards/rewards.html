@@ -180,35 +180,63 @@
          <div class="lg:w-1/5 md:w-1/4 sm:w-full p-4">
             <div class="fixed md:relative sm:relative">
                <!-- Friends List -->
-               <div class="bg-white p-4 rounded-lg shadow mb-4">
-                  <h3 class="text-lg font-bold mb-4">Friend</h3>
+               <div class="bg-white p-2 rounded-lg shadow mb-4">
+                  <div class="text-center mb-2">
+                      <!-- Gabungkan teks dalam satu div dengan spacing yang lebih kecil -->
+                      <h3 class="text-lg text-yellow-500 font-bold">Sipaling atlet</h3>
+                      <p class="text-xs text-yellow-500 font-bold">Edisi bulan Desember</p>
+                  </div>
                   <ul>
-                     <li class="flex items-center mb-2 hover:bg-gray-100 p-2 rounded-lg">
-                        <img alt="Friend 1" class="rounded-full mr-2" height="30" src="https://storage.googleapis.com/a1aa/image/oDJoEMVqSvYhGBkeGM3OOYudbjHWHZwNX96KKC7DZwRfiF1TA.jpg" width="30"/>
-                        <div>
-                           <p class="font-medium">Wiyah</p>
-                           <p class="text-gray-500 text-sm">Online 3 Jam yang lalu</p>
-                        </div>
-                     </li>
-                     <!-- Tambahkan teman lainnya... -->
+                      <li class="flex items-center mb-2 hover:bg-shadow p-2 relative bg-amber-500 rounded-lg">
+                          <!-- Icon crown positioned absolutely with z-index higher than the photo -->
+                          <i class="fi fi-rs-crown absolute left-16 top-0 text-yellow-400 z-10"></i>
+                          <img alt="Friend 1" class="rounded-full w-11 h-11 relative ml-6" src="https://storage.googleapis.com/a1aa/image/oDJoEMVqSvYhGBkeGM3OOYudbjHWHZwNX96KKC7DZwRfiF1TA.jpg"/>
+                          <p class="text-xs w-4 h-4 text-center absolute left-12 top-10 text-white bg-yellow-400 z-10 rounded-full">1</p>
+                          <div class="ml-4 text-white">
+                              <p class="text-md">Wiyah</p>
+                              <p class="text-xs">Online 3 Jam yang lalu</p>
+                          </div>
+                          
+                      </li>
+                      <li class="flex items-center mb-2 hover:bg-shadow p-2 relative bg-gray-400 rounded-lg">
+                          <!-- Icon crown positioned absolutely with z-index higher than the photo -->
+                          <i class="fi fi-rs-chess-queen absolute left-16 top-0 text-gray-600 z-10"></i>
+                          <img alt="Friend 1" class="rounded-full w-11 h-11 relative ml-6" src="https://storage.googleapis.com/a1aa/image/oDJoEMVqSvYhGBkeGM3OOYudbjHWHZwNX96KKC7DZwRfiF1TA.jpg"/>
+                          <p class="text-xs w-4 h-4 text-center absolute left-12 top-10 text-white bg-gray-600 z-10 rounded-full">2</p>
+                          <div class="ml-4">
+                              <p class="text-md">Wiyah</p>
+                              <p class="text-gray-500 text-xs">Online 3 Jam yang lalu</p>
+                          </div>
+                      </li>
+                      <li class="flex items-center mb-2 hover:bg-shadow p-2 relative bg-amber-600 rounded-lg">
+                          <!-- Icon crown positioned absolutely with z-index higher than the photo -->
+                          <i class="fi fi-rs-chess-queen absolute left-16 top-0 text-amber-800 z-10"></i>
+                          <img alt="Friend 1" class="rounded-full w-11 h-11 relative ml-6" src="https://storage.googleapis.com/a1aa/image/oDJoEMVqSvYhGBkeGM3OOYudbjHWHZwNX96KKC7DZwRfiF1TA.jpg"/>
+                          <p class="text-xs w-4 h-4 text-center absolute left-12 top-10 text-white bg-amber-800 z-10 rounded-full">3</p>
+                          <div class="ml-4">
+                              <p class="text-md">Wiyah</p>
+                              <p class="text-gray-500 text-xs">Online 3 Jam yang lalu</p>
+                          </div>
+                      </li>
+                      <!-- Tambahkan teman lainnya... -->
                   </ul>
-               </div>
+              </div>
                <!-- Incoming Activity -->
                <div class="bg-white p-4 rounded-lg shadow">
-                  <h3 class="text-lg text-red-700 font-bold mb-4">Incoming Activity</h3>
-                  <div class="flex items-center mb-2 hover:bg-gray-100 hover:scale-105 transform p-2 rounded-lg">
-                     <div class="bg-red-700 text-white rounded-full w-10 h-10 flex items-center justify-center mr-2">
-                        <p class="font-bold">20</p>
-                     </div>
-                     <div>
-                        <p class="font-medium">Badminton</p>
-                        <p class="text-gray-500 text-sm">14.00 - 16.00</p>
-                        <p class="text-gray-500 text-sm">Fun Game Bersama</p>
-                     </div>
-                  </div>
-                  <!-- Tambahkan aktivitas lainnya... -->
+                   <h3 class="text-lg text-red-700 font-bold mb-4">Incoming Activity</h3>
+                   <div class="flex items-center mb-2 hover:bg-gray-100 hover:scale-105 transform p-2 rounded-lg">
+                       <div class="bg-red-700 text-white rounded-full w-10 h-10 flex items-center justify-center mr-2">
+                           <p class="font-bold">20</p>
+                       </div>
+                       <div>
+                           <p class="font-medium">Badminton</p>
+                           <p class="text-gray-500 text-sm">14.00 - 16.00</p>
+                           <p class="text-gray-500 text-sm">Fun Game Bersama</p>
+                       </div>
+                   </div>
+                   <!-- Tambahkan aktivitas lainnya... -->
                </div>
-            </div>
+           </div>
          </div>
       </div>
    </main>
