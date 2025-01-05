@@ -14,26 +14,34 @@
     <title>SportsSpace</title>
   </head>
   <body>
-    <nav>
-      <div class="nav__header">
-        <div class="nav__logo">
-          <a href="">
-            <img src="/image/logo.png" alt="">
-          </a>
-        </div>
-        <div class="nav__menu__btn" id="menu-btn">
-          <span><i class="ri-menu-line"></i></span>
-        </div>
+    <nav class="sticky isolate w-full z-9 font-normal py-8 mx-auto flex items-center justify-between pr-8 pl-8">
+      <div class="flex items-center justify-between w-full">
+          <div class="nav__logo">
+              <a href="#">
+                  <img src="/image/logo.png" alt="Logo" class="max-w-[150px] h-auto">
+              </a>
+          </div>
+          <div class="text-[1.5rem] text-white cursor-pointer" id="menu-btn">
+              <span><i class="ri-menu-line"></i></span>
+          </div>
       </div>
-      <ul class="nav__links" id="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="FAQ.html">FAQ</a></li>
+
+      <!-- Menu Links -->
+      <ul class="absolute top-5 left-0 w-full p-8 list-none flex flex-row items-center justify-center gap-8">
+          <li><a href="firstpage.html" class="text-black border-b-4 border-transparent hover:border-red-700 transition duration-300">Home</a></li>
+          <li><a href="aboutus.html" class="text-black border-b-4 border-transparent hover:border-red-700 transition duration-300">About Us</a></li>
+          <li><a href="#" class="text-black border-b-4 border-transparent hover:border-red-700 transition duration-300">Contact</a></li>
+          <li><a href="FAQ.html" class="text-black border-b-4 border-transparent hover:border-red-700 transition duration-300">FAQ</a></li>
       </ul>
-      <div class="nav__btns">
-        <a href="/register/register.html" class="btn sign__up">Sign Up</a>
-        <a href="/login/login.html" class="btn sign__in">Sign In</a>
+
+      <!-- Buttons -->
+      <div class="flex flex-1 space-x-2 z-20">
+          <a href="/register/register.html" class="py-3 px-6 outline-none border-none text-base whitespace-nowrap rounded-[10px] text-black hover:text-[#d60505] bg-transparent transition duration-300">
+              Sign Up
+          </a>
+          <a href="/login/login.html" class="py-3 px-6 outline-none border-none text-base whitespace-nowrap rounded-[10px] text-white hover:bg-red-800 transition duration-300" style="background-color:#d60505;">
+              Sign In
+          </a>
       </div>
     </nav>
     <header class="header__container">
@@ -70,12 +78,12 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="main.js"></script>
   </body>
-  <footer class="bg-white">
+  <footer style="background-color: #d60505;">
     <div class="mx-auto w-full max-w-screen-xl">
       <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-3">
         <div>
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Contact us</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <ul class="text-white font-medium">
                 <li class="mb-4">
                     <a href="#" class=" hover:underline">About</a>
                 </li>
@@ -86,7 +94,7 @@
         </div>
         <div>
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Follow Us</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <ul class="text-white font-medium">
                 <li class="mb-4">
                     <a href="#" class="hover:underline">Instagram</a>
                 </li>
@@ -103,14 +111,11 @@
         </div>
         <div>
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Location</h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <ul class="text-white font-medium">
                 <li class="mb-4">
                     <a href="#" class="hover:underline">Jl.Majalaya</a>
                 </li>
             </ul>
         </div>
   </footer>
-
-
-
 </html>
