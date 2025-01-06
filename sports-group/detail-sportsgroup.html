@@ -126,31 +126,126 @@
                </a>
             </li>
             <li>
-               <a href="/komunitas/komunitas.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-700 hover:text-white group">
-                  <i class="fi fi-rs-users-alt"></i>
-                  <span class="flex-1 ms-3 whitespace-nowrap">Community</span>
+               <a href="/komunitas/komunitas.html" class="flex items-center w-full p-2 text-base text-black hover:bg-red-600 hover:bg-red-600 hover:text-white duration-75 rounded-lg group" 
+                  aria-controls="dropdown-example" 
+                  data-collapse-toggle="dropdown-example">
+                  <i class="fi fi-rs-users-alt"></i>   
+                  <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Community</span>
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg>
                </a>
+               <ul id="dropdown-example" class="hidden py-2 space-y-2">
+                     <li>
+                        <a href="#" class="flex items-center w-full p-2 text-black hover:bg-red-600 transition duration-75 rounded-lg pl-11">My Community</a>
+                     </li>
+                     <li>
+                        <a href="/komunitas/addKomunitas.html" class="flex items-center w-full p-2 text-black hover:bg-red-600 hover:text-white transition duration-75 rounded-lg pl-11">Add Community</a>
+                     </li>
+               </ul>
             </li>
+            
+            <script>
+               document.addEventListener('DOMContentLoaded', () => {
+                  const menuButton = document.querySelector('[data-collapse-toggle="dropdown-example"]');
+                  const submenu = document.getElementById('dropdown-example');
+                  const dropdownIcon = menuButton.querySelector('svg');
+            
+                  // Klik pada menu utama (bukan ikon dropdown) akan membuka halaman
+                  menuButton.addEventListener('click', (event) => {
+                     if (event.target === dropdownIcon || dropdownIcon.contains(event.target)) {
+                        event.preventDefault(); // Hanya cegah navigasi jika ikon diklik
+                        submenu.classList.toggle('hidden');
+                     }
+                  });
+            
+                  // Cegah submenu menutup ketika salah satu opsinya diklik
+                  submenu.addEventListener('click', (event) => {
+                     event.stopPropagation(); // Hindari penutupan submenu
+                  });
+               });
+            </script>
             <li>
-               <a href="/fields/fields.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-700 hover:text-white group">
-                  <i class="fi fi-rs-court-sport">
-                  </i>
-                  <span class="flex-1 ms-3 whitespace-nowrap">Field</span>
+               <a href="/fields/fields.html" class="flex items-center w-full p-2 text-base text-black hover:bg-red-600 hover:bg-red-600 hover:text-white duration-75 rounded-lg group" 
+                  aria-controls="dropdown-fields" 
+                  data-collapse-toggle="dropdown-fields">
+                  <i class="fi fi-rs-users-alt"></i>   
+                  <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Fields</span>
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg>
                </a>
+               <ul id="dropdown-fields" class="hidden py-2 space-y-2">
+                     <li>
+                        <a href="/fields/add-fields.html" class="flex items-center w-full p-2 text-black hover:bg-red-600 hover:text-white transition duration-75 rounded-lg pl-11">Add Fields</a>
+                     </li>
+               </ul>
             </li>
+            
+            <script>
+               document.addEventListener('DOMContentLoaded', () => {
+                  const menuButton = document.querySelector('[data-collapse-toggle="dropdown-fields"]');
+                  const submenu = document.getElementById('dropdown-fields');
+                  const dropdownIcon = menuButton.querySelector('svg');
+            
+                  // Klik pada menu utama (bukan ikon dropdown) akan membuka halaman
+                  menuButton.addEventListener('click', (event) => {
+                     if (event.target === dropdownIcon || dropdownIcon.contains(event.target)) {
+                        event.preventDefault(); // Hanya cegah navigasi jika ikon diklik
+                        submenu.classList.toggle('hidden');
+                     }
+                  });
+            
+                  // Cegah submenu menutup ketika salah satu opsinya diklik
+                  submenu.addEventListener('click', (event) => {
+                     event.stopPropagation(); // Hindari penutupan submenu
+                  });
+               });
+            </script>
             <li>
-               <a href="/rewards/" class="flex items-center p-2 text-black rounded-lg hover:bg-red-700 hover:text-white group">
+               <a href="#" class="flex items-center p-2 text-black rounded-lg hover:bg-red-700 hover:text-white group">
                   <i class="fi fi-rs-trophy-star"></i>
                   </i>
                   <span class="flex-1 ms-3 whitespace-nowrap">Reward</span>
                </a>
             </li>
             <li>
-               <a href="/sports-group/sports-group.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-700 hover:text-white group">
-                  <i class="fi fi-rs-two-swords"></i>
-                  <span class="flex-1 ms-3 whitespace-nowrap">Sports Group</span>
+               <a href="/sports-group/sports-group.html" class="flex items-center w-full p-2 text-base text-black hover:bg-red-600 hover:bg-red-600 hover:text-white duration-75 rounded-lg group" 
+                  aria-controls="dropdown-sportsgroup" 
+                  data-collapse-toggle="dropdown-sportsgroup">
+                  <i class="fi fi-rs-users-alt"></i>   
+                  <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Sports Group</span>
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg>
                </a>
+               <ul id="dropdown-sportsgroup" class="hidden py-2 space-y-2">
+                     <li>
+                        <a href="/sports-group/add-sportsgroup.html" class="flex items-center w-full p-2 text-black hover:bg-red-600 hover:text-white transition duration-75 rounded-lg pl-11">Add Sports Group</a>
+                     </li>
+               </ul>
             </li>
+            
+            <script>
+               document.addEventListener('DOMContentLoaded', () => {
+                  const menuButton = document.querySelector('[data-collapse-toggle="dropdown-sportsgroup"]');
+                  const submenu = document.getElementById('dropdown-sportsgroup');
+                  const dropdownIcon = menuButton.querySelector('svg');
+            
+                  // Klik pada menu utama (bukan ikon dropdown) akan membuka halaman
+                  menuButton.addEventListener('click', (event) => {
+                     if (event.target === dropdownIcon || dropdownIcon.contains(event.target)) {
+                        event.preventDefault(); // Hanya cegah navigasi jika ikon diklik
+                        submenu.classList.toggle('hidden');
+                     }
+                  });
+            
+                  // Cegah submenu menutup ketika salah satu opsinya diklik
+                  submenu.addEventListener('click', (event) => {
+                     event.stopPropagation(); // Hindari penutupan submenu
+                  });
+               });
+            </script>
             <li>
                <a href="/profile/profile.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-700 hover:text-white group">
                   <i class="fi fi-rs-user">
@@ -204,6 +299,12 @@
                     <p class="text-lg font-semibold ml-4">Location</p>
                 </div>
                 <p class="text-sm ml-10">Jl. Banda No.28, Citarum, Kec. Bandung Wetan, Kota Bandung, Jawa Barat 40115</p>
+                <iframe class="w-full h-80 mt-4" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8581995184823!2d107.61475767317872!3d-6.9075541675987004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6358b2f9617%3A0x7e6c6d60f7160fe3!2sJl.%20Banda%20No.28%2C%20Citarum%2C%20Kec.%20Bandung%20Wetan%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040115!5e0!3m2!1sid!2sid!4v1736136142169!5m2!1sid!2sid" 
+                    style="border:0;"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
          <div class="lg:w-1/5 md:w-1/4 sm:w-full p-4">
