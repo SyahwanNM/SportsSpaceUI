@@ -318,36 +318,39 @@
                     </div>
 
                     <div id="activityModal" class="fixed inset-0 bg-gray-800 bg-opacity-50 z-40 flex justify-center items-center hidden">
-                        <div class="bg-white rounded-lg shadow-lg w-96 p-6">
-                            <h2 class="text-xl font-bold mb-4">Create New Activity</h2>
+                        <div class="bg-white rounded-lg shadow-lg w-96 p-3 mt-20">
+                            <h2 class="text-xl font-bold mb-3">Create New Activity</h2>
                             <form id="activityForm">
-                                <div class="mb-4">
-                                    <label for="activityName" class="block text-sm font-medium text-gray-700">Activity Name</label>
-                                    <input type="text" id="activityName" name="activityName" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                <div class="mb-3 grid grid-cols-2 gap-3">
+                                    <div>
+                                       <label for="activityName" class="block text-sm font-medium text-gray-700">Activity Name</label>
+                                       <input type="text" id="activityName" name="activityName" class="mt-1 block h-8 w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                    </div>
+                                    
+                                    <div>
+                                       <label for="paymentAmount" class="block text-sm font-medium text-gray-700">Payment Amount</label>
+                                       <input type="number" id="paymentAmount" name="paymentAmount" class="mt-1 block h-8 w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                    </div>
                                 </div>
-                                <div class="mb-4">
+                                <div class="mb-3">
                                     <label for="date" class="block text-sm font-medium text-gray-700">Date</label>
-                                    <input type="date" id="date" name="date" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                    <input type="date" id="date" name="date" class="mt-1 block h-8 w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                                 </div>
-                                <div class="mb-4 grid grid-cols-2 gap-4">
+                                <div class="mb-3 grid grid-cols-2 gap-3">
                                     <div>
                                         <label for="startTime" class="block text-sm font-medium text-gray-700">Start Time</label>
-                                        <input type="time" id="startTime" name="startTime" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                        <input type="time" id="startTime" name="startTime" class="mt-1 block h-8 w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                                     </div>
                                     <div>
                                         <label for="endTime" class="block text-sm font-medium text-gray-700">End Time</label>
-                                        <input type="time" id="endTime" name="endTime" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                        <input type="time" id="endTime" name="endTime" class="mt-1 block h-8 w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                                     </div>
                                 </div>
-                                <div class="mb-4">
+                                <div class="mb-3">
                                     <label for="location" class="block text-sm font-medium text-gray-700">Location</label>
-                                    <input type="text" id="location" name="location" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                                    <input type="text" id="location" name="location" class="mt-1 block h-8 w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
                                 </div>
-                                <div class="mb-4">
-                                    <label for="paymentAmount" class="block text-sm font-medium text-gray-700">Payment Amount</label>
-                                    <input type="number" id="paymentAmount" name="paymentAmount" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                                </div>
-                                <div class="mb-4">
+                                <div class="mb-3">
                                     <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
                                     <textarea id="description" name="description" rows="3" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
                                 </div>
