@@ -189,7 +189,7 @@
             </li>
 
             <li>
-               <a href="/komunitas/komunitas.html" class="flex items-center w-full p-2 text-base text-black hover:bg-red-600 hover:bg-red-600 hover:text-white duration-75 rounded-lg group" 
+               <a href="/komunitas/komunitas.html" class="flex text-sm items-center w-full p-2 text-black bg-red-700 hover:bg-red-700 text-white rounded-lg group" 
                   aria-controls="dropdown-example" 
                   data-collapse-toggle="dropdown-example">
                   <i class="fi fi-rs-users-alt"></i>   
@@ -200,7 +200,7 @@
                </a>
                <ul id="dropdown-example" class="hidden py-2 space-y-2">
                      <li>
-                        <a href="/komunitas/myKomunitas.html" class="flex items-center w-full p-2 text-black hover:bg-red-600 transition duration-75 rounded-lg pl-11">My Community</a>
+                        <a href="/komunitas/myKomunitas.html" class="flex items-center w-full p-2 text-black hover:bg-red-600 transition duration-75 rounded-lg pl-11 hover:text-white">My Community</a>
                      </li>
                      <li>
                         <a href="/komunitas/addKomunitas.html" class="flex items-center w-full p-2 text-black hover:bg-red-600 hover:text-white transition duration-75 rounded-lg pl-11">Add Community</a>
@@ -228,30 +228,89 @@
                   });
                });
             </script>
-            
-            
-   
-               <a href="/fields/fields.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-600 hover:text-white group">
-                  <i class="fi fi-rs-court-sport">
-                  </i>
-                  <span class="flex-1 ms-3 whitespace-nowrap">Field</span>
-               </a>
-            </li>
             <li>
-               <a href="/rewards/rewards.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-600 hover:text-white group">
+               <a href="/fields/fields.html" class="flex items-center w-full p-2 text-sm text-black hover:bg-red-600 hover:bg-red-600 hover:text-white duration-75 rounded-lg group" 
+                  aria-controls="dropdown-fields" 
+                  data-collapse-toggle="dropdown-fields">
+                  <i class="fi fi-rs-court-sport"></i>  
+                  <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Fields</span>
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg>
+               </a>
+               <ul id="dropdown-fields" class="hidden py-2 space-y-2">
+                     <li>
+                        <a href="/fields/add-fields.html" class="flex items-center w-full p-2 text-black hover:bg-red-600 hover:text-white transition duration-75 rounded-lg pl-11">Add Fields</a>
+                     </li>
+               </ul>
+            </li>
+            
+            <script>
+               document.addEventListener('DOMContentLoaded', () => {
+                  const menuButton = document.querySelector('[data-collapse-toggle="dropdown-fields"]');
+                  const submenu = document.getElementById('dropdown-fields');
+                  const dropdownIcon = menuButton.querySelector('svg');
+            
+                  // Klik pada menu utama (bukan ikon dropdown) akan membuka halaman
+                  menuButton.addEventListener('click', (event) => {
+                     if (event.target === dropdownIcon || dropdownIcon.contains(event.target)) {
+                        event.preventDefault(); // Hanya cegah navigasi jika ikon diklik
+                        submenu.classList.toggle('hidden');
+                     }
+                  });
+            
+                  // Cegah submenu menutup ketika salah satu opsinya diklik
+                  submenu.addEventListener('click', (event) => {
+                     event.stopPropagation(); // Hindari penutupan submenu
+                  });
+               });
+            </script>
+            <li>
+               <a href="/rewards/rewards.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-700 hover:text-white group">
                   <i class="fi fi-rs-trophy-star"></i>
                   </i>
                   <span class="flex-1 ms-3 whitespace-nowrap">Reward</span>
                </a>
             </li>
             <li>
-               <a href="/sports-group/sports-group.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-600 hover:text-white group">
-                  <i class="fi fi-rs-two-swords"></i>
-                  <span class="flex-1 ms-3 whitespace-nowrap">Sports Group</span>
+               <a href="/sports-group/sports-group.html" class="flex items-center w-full p-2 text-sm text-black hover:bg-red-600 hover:bg-red-600 hover:text-white duration-75 rounded-lg group" 
+                  aria-controls="dropdown-sportsgroup" 
+                  data-collapse-toggle="dropdown-sportsgroup">
+                  <i class="fi fi-rs-users-alt"></i>   
+                  <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Sports Group</span>
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg>
                </a>
+               <ul id="dropdown-sportsgroup" class="hidden py-2 space-y-2">
+                     <li>
+                        <a href="/sports-group/add-sportsgroup.html" class="flex items-center w-full p-2 text-black hover:bg-red-700 hover:text-white transition duration-75 rounded-lg pl-11">Add Sports Group</a>
+                     </li>
+               </ul>
             </li>
+            
+            <script>
+               document.addEventListener('DOMContentLoaded', () => {
+                  const menuButton = document.querySelector('[data-collapse-toggle="dropdown-sportsgroup"]');
+                  const submenu = document.getElementById('dropdown-sportsgroup');
+                  const dropdownIcon = menuButton.querySelector('svg');
+            
+                  // Klik pada menu utama (bukan ikon dropdown) akan membuka halaman
+                  menuButton.addEventListener('click', (event) => {
+                     if (event.target === dropdownIcon || dropdownIcon.contains(event.target)) {
+                        event.preventDefault(); // Hanya cegah navigasi jika ikon diklik
+                        submenu.classList.toggle('hidden');
+                     }
+                  });
+            
+                  // Cegah submenu menutup ketika salah satu opsinya diklik
+                  submenu.addEventListener('click', (event) => {
+                     event.stopPropagation(); // Hindari penutupan submenu
+                  });
+               });
+            </script>
             <li>
-               <a href="/profile/profile.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-600 hover:text-white group">
+               <a href="/profile/profile.html" class="flex items-center w-full p-2 text-sm text-black hover:bg-red-600 hover:bg-red-600 hover:text-white duration-75 rounded-lg group">
                   <i class="fi fi-rs-user">
                   </i>
                   <span class="flex-1 ms-3 whitespace-nowrap">Profile</span>
@@ -325,37 +384,58 @@
                <div class="fixed md:relative sm:relative">
                   <!-- Friends List -->
                   <div class="bg-white p-4 rounded-lg shadow mb-4">
-                     <h3 class="text-lg font-bold mb-4">Friend</h3>
+                     <h3 class="text-md font-bold mb-4">Friend</h3>
                      <ul>
                         <li class="flex items-center mb-2 hover:bg-gray-100 p-2 rounded-lg">
-                           <img alt="Friend 1" class="rounded-full mr-2" height="30" src="https://storage.googleapis.com/a1aa/image/oDJoEMVqSvYhGBkeGM3OOYudbjHWHZwNX96KKC7DZwRfiF1TA.jpg" width="30"/>
+                           <img alt="Friend 1" class="rounded-full mr-2 w-8 h-8" src="https://storage.googleapis.com/a1aa/image/oDJoEMVqSvYhGBkeGM3OOYudbjHWHZwNX96KKC7DZwRfiF1TA.jpg""/>
                            <div>
-                              <p class="font-medium">Wiyah</p>
-                              <p class="text-gray-500 text-sm">Online 3 Jam yang lalu</p>
+                              <p class="text-sm">Wiyah</p>
+                              <p class="text-gray-500 text-sm">Online 3 hours ago</p>
                            </div>
                         </li>
-                        <!-- Tambahkan teman lainnya... -->
+                        <li class="flex items-center mb-2 hover:bg-gray-100 p-2 rounded-lg">
+                           <img alt="Friend 1" class="rounded-full mr-2 w-8 h-8" src="https://images.ctfassets.net/szez98lehkfm/owPUbtQc7an5ZEJhpHR6O/ae13d4541082f75d1bdba669f42487bb/MyIC_Article_98642"/>
+                           <div>
+                              <p class="text-sm">Jamson</p>
+                              <p class="text-gray-500 text-sm">Online yesterday</p>
+                           </div>
+                        </li>
+                        <li class="flex items-center mb-2 hover:bg-gray-100 p-2 rounded-lg">
+                           <img alt="Friend 1" class="rounded-full mr-2 w-8 h-8"src="https://www.snexplores.org/wp-content/uploads/2020/05/1030_sports_science_numbers-1030x579.jpg"/>
+                           <div>
+                              <p class="text-sm">Andreas</p>
+                              <p class="text-gray-500 text-sm" w-8 h-8>Online 5 hours ago</p>
+                           </div>
+                        </li>
                      </ul>
                   </div>
                   <!-- Incoming Activity -->
                   <div class="bg-white p-4 rounded-lg shadow">
-                     <h3 class="text-lg text-red-700 font-bold mb-4">Incoming Activity</h3>
+                     <h3 class="text-md text-red-700 font-bold mb-4">Incoming Activity</h3>
                      <div class="flex items-center mb-2 hover:bg-gray-100 hover:scale-105 transform p-2 rounded-lg">
                         <div class="bg-red-700 text-white rounded-full w-10 h-10 flex items-center justify-center mr-2">
                            <p class="font-bold">20</p>
                         </div>
                         <div>
-                           <p class="font-medium">Badminton</p>
+                           <p class="text-sm">Badminton</p>
                            <p class="text-gray-500 text-sm">14.00 - 16.00</p>
                            <p class="text-gray-500 text-sm">Fun Game Bersama</p>
                         </div>
                      </div>
-                     <!-- Tambahkan aktivitas lainnya... -->
+                     <div class="flex items-center mb-2 hover:bg-gray-100 hover:scale-105 transform p-2 rounded-lg">
+                        <div class="bg-red-700 text-white rounded-full w-10 h-10 flex items-center justify-center mr-2">
+                           <p class="font-bold">20</p>
+                        </div>
+                        <div>
+                           <p class="text-sm">Futsal</p>
+                           <p class="text-gray-500 text-sm">08.00 - 10.00</p>
+                           <p class="text-gray-500 text-sm">Sisfo Fun</p>
+                        </div>
+                     </div>
+                     
                   </div>
                </div>
             </div>
-            
-         </div>
       </div>
    </main>
 </body>
