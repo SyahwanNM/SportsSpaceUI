@@ -186,7 +186,7 @@
       <div class="h-full px-3 pb-4 overflow-y-auto bg-white">
          <ul class="space-y-2 text-sm">
             <li>
-               <a href="/dashboard/dashboard.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-700 hover:text-white group">
+               <a href="/dashboard/dashboard.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-600 hover:text-white group">
                   <i class="fi fi-rs-home">
                   </i>
                   <span class="ms-3">Dashboard</span>
@@ -194,7 +194,7 @@
             </li>
 
             <li>
-               <a href="/komunitas/komunitas.html" class="flex items-center w-full p-2 text-base text-black hover:bg-red-600 hover:bg-red-600 hover:text-white duration-75 rounded-lg group" 
+               <a href="/komunitas/komunitas.html" class="flex items-center w-full p-2 text-sm text-black hover:bg-red-600 hover:bg-red-600 hover:text-white duration-75 rounded-lg group" 
                   aria-controls="dropdown-example" 
                   data-collapse-toggle="dropdown-example">
                   <i class="fi fi-rs-users-alt"></i>   
@@ -233,30 +233,89 @@
                   });
                });
             </script>
-            
-            
-   
-               <a href="/fields/fields.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-600 hover:text-white group">
-                  <i class="fi fi-rs-court-sport">
-                  </i>
-                  <span class="flex-1 ms-3 whitespace-nowrap">Field</span>
-               </a>
-            </li>
             <li>
-               <a href="/rewards/rewards.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-600 hover:text-white group">
+               <a href="/fields/fields.html" class="flex items-center w-full p-2 text-sm text-black hover:bg-red-600 hover:bg-red-600 hover:text-white duration-75 rounded-lg group" 
+                  aria-controls="dropdown-fields" 
+                  data-collapse-toggle="dropdown-fields">
+                  <i class="fi fi-rs-court-sport"></i>  
+                  <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Fields</span>
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg>
+               </a>
+               <ul id="dropdown-fields" class="hidden py-2 space-y-2">
+                     <li>
+                        <a href="/fields/add-fields.html" class="flex items-center w-full p-2 text-black hover:bg-red-600 hover:text-white transition duration-75 rounded-lg pl-11">Add Fields</a>
+                     </li>
+               </ul>
+            </li>
+            
+            <script>
+               document.addEventListener('DOMContentLoaded', () => {
+                  const menuButton = document.querySelector('[data-collapse-toggle="dropdown-fields"]');
+                  const submenu = document.getElementById('dropdown-fields');
+                  const dropdownIcon = menuButton.querySelector('svg');
+            
+                  // Klik pada menu utama (bukan ikon dropdown) akan membuka halaman
+                  menuButton.addEventListener('click', (event) => {
+                     if (event.target === dropdownIcon || dropdownIcon.contains(event.target)) {
+                        event.preventDefault(); // Hanya cegah navigasi jika ikon diklik
+                        submenu.classList.toggle('hidden');
+                     }
+                  });
+            
+                  // Cegah submenu menutup ketika salah satu opsinya diklik
+                  submenu.addEventListener('click', (event) => {
+                     event.stopPropagation(); // Hindari penutupan submenu
+                  });
+               });
+            </script>
+            <li>
+               <a href="/rewards/rewards.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-700 hover:text-white group">
                   <i class="fi fi-rs-trophy-star"></i>
                   </i>
                   <span class="flex-1 ms-3 whitespace-nowrap">Reward</span>
                </a>
             </li>
             <li>
-               <a href="/sports-group/sports-group.html" class="flex items-center p-2 text-black rounded-lg hover:bg-red-600 hover:text-white group">
-                  <i class="fi fi-rs-two-swords"></i>
-                  <span class="flex-1 ms-3 whitespace-nowrap">Sports Group</span>
+               <a href="/sports-group/sports-group.html" class="flex items-center p-2 text-sm text-black rounded-lg hover:bg-red-700 hover:text-white group" 
+                  aria-controls="dropdown-sportsgroup" 
+                  data-collapse-toggle="dropdown-sportsgroup">
+                  <i class="fi fi-rs-users-alt"></i>   
+                  <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Sports Group</span>
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                  </svg>
                </a>
+               <ul id="dropdown-sportsgroup" class="hidden py-2 space-y-2">
+                     <li>
+                        <a href="/sports-group/add-sportsgroup.html" class="flex items-center w-full p-2 text-black hover:bg-red-700 hover:text-white transition duration-75 rounded-lg pl-11">Add Sports Group</a>
+                     </li>
+               </ul>
             </li>
+            
+            <script>
+               document.addEventListener('DOMContentLoaded', () => {
+                  const menuButton = document.querySelector('[data-collapse-toggle="dropdown-sportsgroup"]');
+                  const submenu = document.getElementById('dropdown-sportsgroup');
+                  const dropdownIcon = menuButton.querySelector('svg');
+            
+                  // Klik pada menu utama (bukan ikon dropdown) akan membuka halaman
+                  menuButton.addEventListener('click', (event) => {
+                     if (event.target === dropdownIcon || dropdownIcon.contains(event.target)) {
+                        event.preventDefault(); // Hanya cegah navigasi jika ikon diklik
+                        submenu.classList.toggle('hidden');
+                     }
+                  });
+            
+                  // Cegah submenu menutup ketika salah satu opsinya diklik
+                  submenu.addEventListener('click', (event) => {
+                     event.stopPropagation(); // Hindari penutupan submenu
+                  });
+               });
+            </script>
             <li>
-               <a href="/profile/profile.html" class="flex items-center p-2 text-white bg-red-600 rounded-lg hover:bg-red-600 hover:text-white group">
+               <a href="/profile/profile.html" class="flex text-sm items-center w-full p-2 text-black bg-red-700 hover:bg-red-700 text-white rounded-lg group">
                   <i class="fi fi-rs-user">
                   </i>
                   <span class="flex-1 ms-3 whitespace-nowrap">Profile</span>
@@ -356,13 +415,13 @@
                            <img alt="User Profile Picture" class="h-10 w-10 rounded-full" src="/image/football.jpg" />
                            <div>
                               <p class="font-bold">Fadil</p>
-                              <p class="text-gray-500">Today 6.59 PM</p>
+                              <p class="text-gray-500">Yesterday, 10.00 AM</p>
                            </div>
                         </div>
                         <!-- Post text -->
-                        <p class="mt-4">Rutinitas dihari libur!</p>
+                        <p class="mt-4">Sunday Morning Run</p>
                         <!-- Post image -->
-                        <img alt="Post Image" class="mt-4 max-w-full rounded-lg" src="https://storage.googleapis.com/a1aa/image/j2eYnaJFczzsHC1aZzAyEOWuAIEeteVgrKnucLWeSwGxLWUPB.jpg" />
+                        <img alt="Post Image" class="mt-4 max-w-full rounded-lg" src="https://images.squarespace-cdn.com/content/v1/5cfdd3abcdc28e0001b33b62/1576799688955-G24BLZ3EGYBS018S3NJO/athlete.jpg" />
                      </div>
                   </div>
                                     
