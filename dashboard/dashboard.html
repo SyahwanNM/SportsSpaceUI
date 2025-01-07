@@ -199,7 +199,7 @@
             </li>
 
             <li>
-               <a href="/komunitas/komunitas.html" class="flex items-center w-full p-2 text-base text-black hover:bg-red-600 hover:bg-red-600 hover:text-white duration-75 rounded-lg group" 
+               <a href="/komunitas/komunitas.html" class="flex items-center w-full p-2 text-black text-sm hover:bg-red-600 hover:bg-red-600 hover:text-white duration-75 rounded-lg group" 
                   aria-controls="dropdown-example" 
                   data-collapse-toggle="dropdown-example">
                   <i class="fi fi-rs-users-alt"></i>   
@@ -273,9 +273,9 @@
 
    <main class="pt-20 pb-20">
       <div class="flex justify-end">
-         <!-- Main Content -->
-         <div class="lg:w-3/5 md:w-3/5 p-4 ">  
-            <!-- Banner -->
+        <!-- Main Content -->
+         <div class="lg:w-3/5 md:w-3/5 p-4">
+          <!-- Banner -->
             <div class="flex mb-4">
                <div id="default-carousel" class="relative w-full" data-carousel="slide">
                   <!-- Carousel wrapper -->
@@ -340,469 +340,291 @@
                <h2 class="text-2xl font-bold text-red-700 mb-2">Weekly Activity</h2>
                <p class="text-gray-500 mb-4">Activity Feed</p>
                <button id="createPostBtn" class="text-blue-500 flex items-center hover:text-blue-700">
-                   Buat Postingan
-                   <i class="fas fa-plus ml-2"></i>
+                  Buat Postingan
+                  <i class="fas fa-plus ml-2"></i>
                </button>
-               
+            
                <!-- Form to add a post -->
                <div id="postForm" class="hidden mt-4">
-                   <form action="#" method="post" class="bg-gray-100 p-4 rounded-lg shadow" enctype="multipart/form-data">
-                       <div class="mb-4">
-                           <label for="postTitle" class="block text-sm font-medium text-gray-700">Title</label>
-                           <input type="text" id="postTitle" name="postTitle" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
-                       </div>
-                       <div class="mb-4">
-                           <label for="postContent" class="block text-sm font-medium text-gray-700">Content</label>
-                           <textarea id="postContent" name="postContent" rows="4" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required></textarea>
-                       </div>
-                       <div class="mb-4">
-                           <label for="postImage" class="block text-sm font-medium text-gray-700">Upload Image</label>
-                           <input type="file" id="postImage" name="postImage" accept="image/*" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
-                       </div>
-                       <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Submit</button>
-                       <button type="submit" class="bg-red-500 text-black py-2 px-4 rounded hover:bg-red-700">Cancel</button>
-                   </form>
+                  <form action="#" method="post" class="bg-gray-100 p-4 rounded-lg shadow" enctype="multipart/form-data">
+                     <div class="mb-4">
+                        <label for="postTitle" class="block text-sm font-medium text-gray-700">Title</label>
+                        <input type="text" id="postTitle" name="postTitle" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required>
+                     </div>
+                     <div class="mb-4">
+                        <label for="postContent" class="block text-sm font-medium text-gray-700">Content</label>
+                        <textarea id="postContent" name="postContent" rows="4" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required></textarea>
+                     </div>
+                     <div class="mb-4">
+                        <label for="postImage" class="block text-sm font-medium text-gray-700">Upload Image</label>
+                        <input type="file" id="postImage" name="postImage" accept="image/*" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                     </div>
+                     <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">Submit</button>
+                     <button type="submit" class="bg-red-500 text-black py-2 px-4 rounded hover:bg-red-700">Cancel</button>
+                  </form>
                </div>
-           </div>
-           
-           <script>
+            </div>
+        
+            <script>
                // JavaScript to toggle form visibility
                document.getElementById('createPostBtn').addEventListener('click', function() {
-                   const form = document.getElementById('postForm');
-                   form.classList.toggle('hidden');
+                  const form = document.getElementById('postForm');
+                  form.classList.toggle('hidden');
                });
-           </script>
-           
-         
-         
-
-         <div class="bg-white p-4 rounded-lg shadow mb-4">
-            <div class="flex items-center mb-4">
-               <img alt="User Profile" class="rounded-full w-12 h-12" height="40" src="/image/football.jpg" width="40" />
-               <div class="ml-3">
-                  <p class="font-bold">Fadil</p>
-                  <p class="text-gray-500 text-sm">Hari ini 6.59 PM</p>
-               </div>
-            </div>
-            <p class="mb-4">Rutinitas dihari libur!</p>
-            <div 
-               class="w-full h-64 bg-cover bg-center rounded-lg mb-4 cursor-pointer" 
-               style="background-image: url('https://storage.googleapis.com/a1aa/image/j2eYnaJFczzsHC1aZzAyEOWuAIEeteVgrKnucLWeSwGxLWUPB.jpg');"
-               onclick="showImagePopup()">
-            </div>
-
-            <!-- Popup Gambar -->
-            <div id="image-popup" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
-               <div class="bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full">
-                  <!-- Tombol Close -->
-                  <button 
-                     class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl"
-                     onclick="closeImagePopup()">
-                     &times;
-                  </button>
-
-                  <!-- Gambar -->
-                  <div class="flex justify-center mb-4">
-                     <img 
-                        src="https://storage.googleapis.com/a1aa/image/j2eYnaJFczzsHC1aZzAyEOWuAIEeteVgrKnucLWeSwGxLWUPB.jpg" 
-                        alt="Full Image" 
-                        class="max-w-full max-h-96 rounded-lg" />
-                  </div>
-
-                  <!-- Tombol Keluar -->
-                  <div class="flex justify-center">
-                     <button 
-                        class="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
-                        onclick="closeImagePopup()">
-                        Keluar
-                     </button>
-                  </div>
-               </div>
-            </div>
-            
-            
-            <div class="flex space-x-4">
-               <button class="flex items-center text-gray-500 hover:text-red-500">
-                  <i class="fi fi-rs-heart mr-1"></i>
-                  Like
-               </button>
-               <button 
-                  id="comment-btn" 
-                  class="flex items-center text-gray-500 hover:text-green-500"
-                  onclick="toggleCommentSection()">
-                  <i class="fi fi-rs-comment-alt mr-1"></i>
-                  Comment
-               </button>
-            </div>
-
-            <script>
-               function showImagePopup() {
-                  document.getElementById('image-popup').classList.remove('hidden');
-               }
-            
-               function closeImagePopup() {
-                  document.getElementById('image-popup').classList.add('hidden');
-               }
             </script>
-            
-
+          
+            <!-- Post Content -->
             <div class="bg-white p-4 rounded-lg shadow mb-4">
                <div class="flex items-center mb-4">
-                  <img alt="User Profile" class="rounded-full w-12 h-12" height="40" src="/image/football.jpg" width="40" />
-                  <div class="ml-3">
-                     <p class="font-bold">Fadil</p>
-                     <p class="text-gray-500 text-sm">Hari ini 6.59 PM</p>
-                  </div>
+                 <img alt="User Profile" class="rounded-full w-12 h-12" src="/image/football.jpg" />
+                 <div class="ml-3">
+                   <p class="font-bold">Fadil</p>
+                   <p class="text-gray-500 text-sm">Hari ini 6.59 PM</p>
+                 </div>
                </div>
-               <p class="mb-4">Rutinitas dihari libur!</p>
-               <div 
-                  class="w-full h-64 bg-cover bg-center rounded-lg mb-4 cursor-pointer" 
-                  style="background-image: url('https://storage.googleapis.com/a1aa/image/j2eYnaJFczzsHC1aZzAyEOWuAIEeteVgrKnucLWeSwGxLWUPB.jpg');"
-                  onclick="showImagePopup()">
+               <p class="mb-4">Rutinitas di hari libur!</p>
+               <div
+                 class="w-full h-64 bg-cover bg-center rounded-lg mb-4 cursor-pointer"
+                 style="background-image: url('https://storage.googleapis.com/a1aa/image/j2eYnaJFczzsHC1aZzAyEOWuAIEeteVgrKnucLWeSwGxLWUPB.jpg');"
+                 data-popup-target="image-popup-1"
+               >
                </div>
-   
                <!-- Popup Gambar -->
-               <div id="image-popup" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
-                  <div class="bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full">
-                     <!-- Tombol Close -->
-                     <button 
-                        class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl"
-                        onclick="closeImagePopup()">
-                        &times;
+               <div id="image-popup-1" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
+                 <div class="relative bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full">
+                   <!-- Tombol Close -->
+                   <button
+                     class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl"
+                     data-popup-close
+                   >
+                     &times;
+                   </button>
+                   <!-- Gambar -->
+                   <div class="flex justify-center mb-4">
+                     <img
+                       src="https://storage.googleapis.com/a1aa/image/j2eYnaJFczzsHC1aZzAyEOWuAIEeteVgrKnucLWeSwGxLWUPB.jpg"
+                       alt="Full Image"
+                       class="max-w-full max-h-96 rounded-lg"
+                     />
+                   </div>
+                   <!-- Tombol Keluar -->
+                   <div class="flex justify-center">
+                     <button
+                       class="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
+                       data-popup-close
+                     >
+                       Keluar
                      </button>
-   
-                     <!-- Gambar -->
-                     <div class="flex justify-center mb-4">
-                        <img 
-                           src="https://storage.googleapis.com/a1aa/image/j2eYnaJFczzsHC1aZzAyEOWuAIEeteVgrKnucLWeSwGxLWUPB.jpg" 
-                           alt="Full Image" 
-                           class="max-w-full max-h-96 rounded-lg" />
-                     </div>
-   
-                     <!-- Tombol Keluar -->
-                     <div class="flex justify-center">
-                        <button 
-                           class="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
-                           onclick="closeImagePopup()">
-                           Keluar
-                        </button>
-                     </div>
-                  </div>
+                   </div>
+                 </div>
                </div>
-               
-               
                <div class="flex space-x-4">
-                  <button class="flex items-center text-gray-500 hover:text-red-500">
-                     <i class="fi fi-rs-heart mr-1"></i>
-                     Like
+                  <button 
+                    class="flex items-center text-gray-500 hover:text-red-500">
+                    <i class="fi fi-rs-heart mr-1"></i>
+                    Like
                   </button>
                   <button 
-                     id="comment-btn" 
-                     class="flex items-center text-gray-500 hover:text-green-500"
-                     onclick="toggleCommentSection()">
-                     <i class="fi fi-rs-comment-alt mr-1"></i>
-                     Comment
+                    id="comment-btn-1" 
+                    class="flex items-center text-gray-500 hover:text-green-500"
+                    onclick="toggleCommentSection('comment-section-1')">
+                    <i class="fi fi-rs-comment-alt mr-1"></i>
+                    Comment
                   </button>
                </div>
-   
-               <script>
-                  function showImagePopup() {
-                     document.getElementById('image-popup').classList.remove('hidden');
-                  }
-               
-                  function closeImagePopup() {
-                     document.getElementById('image-popup').classList.add('hidden');
-                  }
-               </script>
-               
-            
-               <!-- Popup Comment Section -->
-               <div id="comment-section" class="hidden mt-4">
+               <div id="comment-section-1" class="hidden mt-4">
                   <textarea 
-                     class="w-full border border-gray-300 rounded-lg p-2 mb-2 focus:ring focus:ring-blue-300" 
-                     placeholder="Write your comment..."></textarea>
+                    class="w-full border border-gray-300 rounded-lg p-2 mb-2 focus:ring focus:ring-blue-300" 
+                    placeholder="Write your comment..."></textarea>
                   <div class="flex justify-end">
-                     <button 
-                        class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
-                        onclick="toggleCommentSection()">
-                        Submit
-                     </button>
+                    <button 
+                      class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+                      onclick="submitComment('comment-section-1')">
+                      Submit
+                    </button>
                   </div>
+                </div>
+             </div>
+     
+             <!-- Post 2 -->
+             <div class="bg-white p-4 rounded-lg shadow mb-4">
+               <div class="flex items-center mb-4">
+                 <img alt="User Profile" class="rounded-full w-12 h-12" src="/image/football.jpg" />
+                 <div class="ml-3">
+                   <p class="font-bold">Fadil</p>
+                   <p class="text-gray-500 text-sm">Hari ini 6.59 PM</p>
+                 </div>
                </div>
-            </div>
-   
-            <script>
-               function toggleCommentSection() {
-                  const commentSection = document.getElementById('comment-section');
-                  commentSection.classList.toggle('hidden');
+               <p class="mb-4">Rutinitas di hari libur!</p>
+               <div
+                 class="w-full h-64 bg-cover bg-center rounded-lg mb-4 cursor-pointer"
+                 style="background-image: url('/image/basketball-court.jpg');"
+                 data-popup-target="image-popup-1"
+               >
+               </div>
+               <!-- Popup Gambar -->
+               <div id="image-popup-2" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
+                 <div class="relative bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full">
+                   <!-- Tombol Close -->
+                   <button
+                     class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl"
+                     data-popup-close
+                   >
+                     &times;
+                   </button>
+                   <!-- Gambar -->
+                   <div class="flex justify-center mb-4">
+                     <img
+                       src="/image/basketball-court.jpg"
+                       alt="Full Image"
+                       class="max-w-full max-h-96 rounded-lg"
+                     />
+                   </div>
+                   <!-- Tombol Keluar -->
+                   <div class="flex justify-center">
+                     <button
+                       class="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
+                       data-popup-close
+                     >
+                       Keluar
+                     </button>
+                   </div>
+                 </div>
+               </div>
+               <div class="flex space-x-4">
+                  <button 
+                    class="flex items-center text-gray-500 hover:text-red-500">
+                    <i class="fi fi-rs-heart mr-1"></i>
+                    Like
+                  </button>
+                  <button 
+                    id="comment-btn-2" 
+                    class="flex items-center text-gray-500 hover:text-green-500"
+                    onclick="toggleCommentSection('comment-section-2')">
+                    <i class="fi fi-rs-comment-alt mr-1"></i>
+                    Comment
+                  </button>
+               </div>
+               <div id="comment-section-2" class="hidden mt-4">
+                  <textarea 
+                    class="w-full border border-gray-300 rounded-lg p-2 mb-2 focus:ring focus:ring-blue-300" 
+                    placeholder="Write your comment..."></textarea>
+                  <div class="flex justify-end">
+                    <button 
+                      class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+                      onclick="submitComment('comment-section-2')">
+                      Submit
+                    </button>
+                  </div>
+                </div>
+             </div>
+             <script>
+               // JavaScript to toggle comment section visibility
+               function toggleCommentSection(id) {
+                 const commentSection = document.getElementById(id);
+                 commentSection.classList.toggle('hidden');
                }
-            </script>
+           
+               // JavaScript to show image popup
+               document.addEventListener('DOMContentLoaded', () => {
+               // Membuka pop-up
+                  document.querySelectorAll('[data-popup-target]').forEach((trigger) => {
+                     trigger.addEventListener('click', () => {
+                     const targetId = trigger.getAttribute('data-popup-target');
+                     const popup = document.getElementById(targetId);
+                     if (popup) popup.classList.remove('hidden');
+                     });
+                  });
 
+                  // Menutup pop-up
+                  document.querySelectorAll('[data-popup-close]').forEach((closeButton) => {
+                     closeButton.addEventListener('click', () => {
+                     const popup = closeButton.closest('.fixed');
+                     if (popup) popup.classList.add('hidden');
+                     });
+                  });
+
+                  // Menutup pop-up jika klik di luar konten
+                  document.querySelectorAll('.fixed').forEach((popup) => {
+                     popup.addEventListener('click', (event) => {
+                     if (event.target === popup) {
+                        popup.classList.add('hidden');
+                     }
+                     });
+                  });
+               });
+           
+               
+           
+               // JavaScript to handle comment submission
+               function submitComment(id) {
+                 const commentSection = document.getElementById(id);
+                 // Handle comment submission logic here
+                 toggleCommentSection(id); // Hide comment section after submission
+               }
+             </script>
+         </div>
+        
+        <!-- Sidebar -->
+        <div class="lg:w-1/5 md:w-1/4 sm:w-full p-4">
+          <div class="fixed md:relative sm:relative">
+            <!-- Friends List -->
             <div class="bg-white p-4 rounded-lg shadow mb-4">
-            <div class="flex items-center mb-4">
-               <img alt="User Profile" class="rounded-full w-12 h-12" height="40" src="/image/football.jpg" width="40" />
-               <div class="ml-3">
-                  <p class="font-bold">Fadil</p>
-                  <p class="text-gray-500 text-sm">Hari ini 6.59 PM</p>
-               </div>
-            </div>
-            <p class="mb-4">Rutinitas dihari libur!</p>
-            <div 
-               class="w-full h-64 bg-cover bg-center rounded-lg mb-4 cursor-pointer" 
-               style="background-image: url('https://storage.googleapis.com/a1aa/image/j2eYnaJFczzsHC1aZzAyEOWuAIEeteVgrKnucLWeSwGxLWUPB.jpg');"
-               onclick="showImagePopup()">
-            </div>
-
-            <!-- Popup Gambar -->
-            <div id="image-popup" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
-               <div class="bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full">
-                  <!-- Tombol Close -->
-                  <button 
-                     class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl"
-                     onclick="closeImagePopup()">
-                     &times;
-                  </button>
-
-                  <!-- Gambar -->
-                  <div class="flex justify-center mb-4">
-                     <img 
-                        src="https://storage.googleapis.com/a1aa/image/j2eYnaJFczzsHC1aZzAyEOWuAIEeteVgrKnucLWeSwGxLWUPB.jpg" 
-                        alt="Full Image" 
-                        class="max-w-full max-h-96 rounded-lg" />
+              <h3 class="text-md font-bold mb-4">Friend</h3>
+              <ul>
+                <li class="flex items-center mb-2 hover:bg-gray-100 p-2 rounded-lg">
+                  <img alt="Friend 1" class="rounded-full mr-2" height="30" src="https://storage.googleapis.com/a1aa/image/oDJoEMVqSvYhGBkeGM3OOYudbjHWHZwNX96KKC7DZwRfiF1TA.jpg" width="30"/>
+                  <div>
+                    <p class="text-sm">Wiyah</p>
+                    <p class="text-gray-500 text-sm">Online 3 Jam yang lalu</p>
                   </div>
-
-                  <!-- Tombol Keluar -->
-                  <div class="flex justify-center">
-                     <button 
-                        class="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
-                        onclick="closeImagePopup()">
-                        Keluar
-                     </button>
-                  </div>
-               </div>
+                </li>
+              </ul>
             </div>
-            
-            
-            <div class="flex space-x-4">
-               <button class="flex items-center text-gray-500 hover:text-red-500">
-                  <i class="fi fi-rs-heart mr-1"></i>
-                  Like
-               </button>
-               <button 
-                  id="comment-btn" 
-                  class="flex items-center text-gray-500 hover:text-green-500"
-                  onclick="toggleCommentSection()">
-                  <i class="fi fi-rs-comment-alt mr-1"></i>
-                  Comment
-               </button>
+            <!-- Incoming Activity -->
+            <div class="bg-white p-4 rounded-lg shadow">
+              <h3 class="text-md text-red-700 font-bold mb-4">Incoming Activity</h3>
+              <div class="flex items-center mb-2 hover:bg-gray-100 hover:scale-105 transform p-2 rounded-lg">
+                <div class="bg-red-700 text-white rounded-full w-10 h-10 flex items-center justify-center mr-2">
+                  <p class="font-bold">20</p>
+                </div>
+                <div>
+                  <p class="text-sm">Badminton</p>
+                  <p class="text-gray-500 text-sm">14.00 - 16.00</p>
+                  <p class="text-gray-500 text-sm">Fun Game Bersama</p>
+                </div>
+              </div>
             </div>
-
-            <script>
-               function showImagePopup() {
-                  document.getElementById('image-popup').classList.remove('hidden');
-               }
-            
-               function closeImagePopup() {
-                  document.getElementById('image-popup').classList.add('hidden');
-               }
-            </script>
-            
-         
-            <!-- Popup Comment Section -->
-            <div id="comment-section" class="hidden mt-4">
-               <textarea 
-                  class="w-full border border-gray-300 rounded-lg p-2 mb-2 focus:ring focus:ring-blue-300" 
-                  placeholder="Write your comment..."></textarea>
-               <div class="flex justify-end">
-                  <button 
-                     class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
-                     onclick="toggleCommentSection()">
-                     Submit
-                  </button>
-               </div>
-            </div>
-         </div>
-
-         <script>
-            function toggleCommentSection() {
-               const commentSection = document.getElementById('comment-section');
-               commentSection.classList.toggle('hidden');
-            }
-         </script>
-
-         <div class="bg-white p-4 rounded-lg shadow mb-4">
-            <div class="flex items-center mb-4">
-               <img alt="User Profile" class="rounded-full w-12 h-12" height="40" src="/image/football.jpg" width="40" />
-               <div class="ml-3">
-                  <p class="font-bold">Fadil</p>
-                  <p class="text-gray-500 text-sm">Hari ini 6.59 PM</p>
-               </div>
-            </div>
-            <p class="mb-4">Rutinitas dihari libur!</p>
-            <div 
-               class="w-full h-64 bg-cover bg-center rounded-lg mb-4 cursor-pointer" 
-               style="background-image: url('https://storage.googleapis.com/a1aa/image/j2eYnaJFczzsHC1aZzAyEOWuAIEeteVgrKnucLWeSwGxLWUPB.jpg');"
-               onclick="showImagePopup()">
-            </div>
-
-            <!-- Popup Gambar -->
-            <div id="image-popup" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
-               <div class="bg-white p-6 rounded-lg shadow-lg max-w-3xl w-full">
-                  <!-- Tombol Close -->
-                  <button 
-                     class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl"
-                     onclick="closeImagePopup()">
-                     &times;
-                  </button>
-
-                  <!-- Gambar -->
-                  <div class="flex justify-center mb-4">
-                     <img 
-                        src="https://storage.googleapis.com/a1aa/image/j2eYnaJFczzsHC1aZzAyEOWuAIEeteVgrKnucLWeSwGxLWUPB.jpg" 
-                        alt="Full Image" 
-                        class="max-w-full max-h-96 rounded-lg" />
-                  </div>
-
-                  <!-- Tombol Keluar -->
-                  <div class="flex justify-center">
-                     <button 
-                        class="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
-                        onclick="closeImagePopup()">
-                        Keluar
-                     </button>
-                  </div>
-               </div>
-            </div>
-            
-            
-            <div class="flex space-x-4">
-               <button class="flex items-center text-gray-500 hover:text-red-500">
-                  <i class="fi fi-rs-heart mr-1"></i>
-                  Like
-               </button>
-               <button 
-                  id="comment-btn" 
-                  class="flex items-center text-gray-500 hover:text-green-500"
-                  onclick="toggleCommentSection()">
-                  <i class="fi fi-rs-comment-alt mr-1"></i>
-                  Comment
-               </button>
-            </div>
-
-            <script>
-               function showImagePopup() {
-                  document.getElementById('image-popup').classList.remove('hidden');
-               }
-            
-               function closeImagePopup() {
-                  document.getElementById('image-popup').classList.add('hidden');
-               }
-            </script>
-            
-         
-            <!-- Popup Comment Section -->
-            <div id="comment-section" class="hidden mt-4">
-               <textarea 
-                  class="w-full border border-gray-300 rounded-lg p-2 mb-2 focus:ring focus:ring-blue-300" 
-                  placeholder="Write your comment..."></textarea>
-               <div class="flex justify-end">
-                  <button 
-                     class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
-                     onclick="toggleCommentSection()">
-                     Submit
-                  </button>
-               </div>
-            </div>
-         </div>
-
-         <script>
-            function toggleCommentSection() {
-               const commentSection = document.getElementById('comment-section');
-               commentSection.classList.toggle('hidden');
-            }
-         </script>
-         
-            <!-- Popup Comment Section -->
-            <div id="comment-section" class="hidden mt-4">
-               <textarea 
-                  class="w-full border border-gray-300 rounded-lg p-2 mb-2 focus:ring focus:ring-blue-300" 
-                  placeholder="Write your comment..."></textarea>
-               <div class="flex justify-end">
-                  <button 
-                     class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
-                     onclick="toggleCommentSection()">
-                     Submit
-                  </button>
-               </div>
-            </div>
-         </div>
-
-         <script>
-            function toggleCommentSection() {
-               const commentSection = document.getElementById('comment-section');
-               commentSection.classList.toggle('hidden');
-            }
-         </script>
-         </div>
-
-         <div class="lg:w-1/5 md:w-1/4 sm:w-full p-4">
-            <div class="fixed md:relative sm:relative">
-               <!-- Friends List -->
-               <div class="bg-white p-4 rounded-lg shadow mb-4">
-                  <h3 class="text-md font-bold mb-4">Friend</h3>
-                  <ul>
-                     <li class="flex items-center mb-2 hover:bg-gray-100 p-2 rounded-lg">
-                        <img alt="Friend 1" class="rounded-full mr-2" height="30" src="https://storage.googleapis.com/a1aa/image/oDJoEMVqSvYhGBkeGM3OOYudbjHWHZwNX96KKC7DZwRfiF1TA.jpg" width="30"/>
-                        <div>
-                           <p class="text-sm">Wiyah</p>
-                           <p class="text-gray-500 text-sm">Online 3 Jam yang lalu</p>
-                        </div>
-                     </li>
-                     <li class="flex items-center mb-2 hover:bg-gray-100 p-2 rounded-lg">
-                        <img alt="Friend 1" class="rounded-full mr-2" height="30" src="https://storage.googleapis.com/a1aa/image/oDJoEMVqSvYhGBkeGM3OOYudbjHWHZwNX96KKC7DZwRfiF1TA.jpg" width="30"/>
-                        <div>
-                           <p class="text-sm">Wiyah</p>
-                           <p class="text-gray-500 text-sm">Online 3 Jam yang lalu</p>
-                        </div>
-                     </li>
-                     <li class="flex items-center mb-2 hover:bg-gray-100 p-2 rounded-lg">
-                        <img alt="Friend 1" class="rounded-full mr-2" height="30" src="https://storage.googleapis.com/a1aa/image/oDJoEMVqSvYhGBkeGM3OOYudbjHWHZwNX96KKC7DZwRfiF1TA.jpg" width="30"/>
-                        <div>
-                           <p class="text-sm">Wiyah</p>
-                           <p class="text-gray-500 text-sm">Online 3 Jam yang lalu</p>
-                        </div>
-                     </li>
-                  </ul>
-               </div>
-               <!-- Incoming Activity -->
-               <div class="bg-white p-4 rounded-lg shadow">
-                  <h3 class="text-md text-red-700 font-bold mb-4">Incoming Activity</h3>
-                  <div class="flex items-center mb-2 hover:bg-gray-100 hover:scale-105 transform p-2 rounded-lg">
-                     <div class="bg-red-700 text-white rounded-full w-10 h-10 flex items-center justify-center mr-2">
-                        <p class="font-bold">20</p>
-                     </div>
-                     <div>
-                        <p class="text-sm">Badminton</p>
-                        <p class="text-gray-500 text-sm">14.00 - 16.00</p>
-                        <p class="text-gray-500 text-sm">Fun Game Bersama</p>
-                     </div>
-                  </div>
-                  <div class="flex items-center mb-2 hover:bg-gray-100 hover:scale-105 transform p-2 rounded-lg">
-                     <div class="bg-red-700 text-white rounded-full w-10 h-10 flex items-center justify-center mr-2">
-                        <p class="font-bold">20</p>
-                     </div>
-                     <div>
-                        <p class="text-sm">Badminton</p>
-                        <p class="text-gray-500 text-sm">14.00 - 16.00</p>
-                        <p class="text-gray-500 text-sm">Fun Game Bersama</p>
-                     </div>
-                  </div>
-                  
-               </div>
-            </div>
-         </div>
+          </div>
+        </div>
       </div>
-   </main>
+    </main>
+  
+    <script>
+  
+      // JavaScript to toggle comment section visibility
+      function toggleCommentSection(id) {
+        const commentSection = document.getElementById(id);
+        commentSection.classList.toggle('hidden');
+      }
+  
+      // JavaScript to show image popup
+      function showImagePopup() {
+        document.getElementById('image-popup').classList.remove('hidden');
+      }
+  
+      // JavaScript to close image popup
+      function closeImagePopup() {
+        document.getElementById('image-popup').classList.add('hidden');
+      }
+  
+      // JavaScript to handle comment submission
+      function submitComment(id) {
+        const commentSection = document.getElementById(id);
+        // Handle comment submission logic here
+        toggleCommentSection(id); // Hide comment section after submission
+      }
+    </script>
 </body>
 
 <footer class="bg-white rounded-lg shadow sm:flex sm:items-center sm:justify-between p-4 sm:p-1 xl:p-2 antialiased fixed bottom-0 w-full">
